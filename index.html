@@ -30,7 +30,7 @@
             <div class="col-md-5 half-width">
                 <img class="mt-3 rounded" src="img/money-cost.jpg">
             </div>
-            <div class="p-5 bg-light text-dark col-md-5 half-width mt-3 text-center">
+            <div class="p-2 bg-light text-dark col-md-5 half-width mt-3 text-center">
                 <div class="mt-4">
                     <h3>Income</h3>
 
@@ -72,10 +72,22 @@
 
 
                     <label>Save:</label>
-                    <input class="mt-4" type="text"> %
-                    <button type="button" class="w-25 btn btn-primary btn-sm">Save</button>
-                    <h4 class="mt-3">Saving Amount: $00</h4>
-                    <h4 class="mt-3">Remaining Balance: $00</h4>
+                    <input id="save-input" class="mt-4" type="text"> %
+
+                    <button id="save-button" type="button" class="w-25 btn btn-primary btn-sm">Save</button>
+
+                    <div>
+                        <h3 class="mt-3 d">Saving Amount</h3>
+                        <h3>$<span id="total-saving">00</span></h3>
+                    </div>
+
+
+
+                    <div>
+                        <h3 class="mt-3 d">Remaining Balance </h3>
+                        <h3>$<span id="total-remaining">00</span></h3>
+                    </div>
+
                 </div>
             </div>
         </section>
