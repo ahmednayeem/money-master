@@ -30,11 +30,20 @@ inputValue('calculate-button').addEventListener('click', function() {
 
     const expenses = parseFloat(foodAmount) + parseFloat(rentAmount) + parseFloat(clothesAmount)
 
+
     const newExpenses = inputValue('total-cost')
-    newExpenses.innerText = expenses;
 
     const totalBalance = inputValue('total-balance');
-    totalBalance.innerText = incomeAmount - expenses;
+    // error
+    if (expenses <= incomeAmount) {
+        newExpenses.innerText = expenses;
+        totalBalance.innerText = incomeAmount - expenses;
+
+
+    } else {
+        inputValue('expensence-error').innerText = 'expenses amount cannot be bigger than income'
+
+    }
 
 
 
@@ -53,8 +62,19 @@ inputValue('save-button').addEventListener('click', function() {
     const calculate = saveInput / 100;
     const saving = incomeInput * calculate;
     const remainingBalance = balance - saving;
-    inputValue('total-saving').innerText = saving;
-    inputValue('total-remaining').innerText = remainingBalance;
+
+    // error handler
+    if (balance >= saving) {
+        inputValue('total-saving').innerText = saving;
+        inputValue('total-remaining').innerText = remainingBalance;
+
+    } else {
+
+        inputValue('saving-error').innerText = 'saving amount cannot be bigger than balance'
+    }
+
+
+
 
 
 })
